@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
-import createContext from "../lib/Context";
+import React from "react";
 
-const ThemeContext = createContext({
+const ThemeContext = React.createContext({
   Theme: "light",
 });
 
