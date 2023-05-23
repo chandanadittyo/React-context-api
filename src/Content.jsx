@@ -1,22 +1,27 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import ThemeContext from "./Context/ThemeContext";
 import Counter from "./Counter";
 import HoverCounter from "./HoverCounter";
 
-const Content = () => {
+// eslint-disable-next-line react/prop-types
+export default function Content() {
   return (
     <div>
       <h2>This is Content</h2>
 
       <Counter>
-        {(counter, incrementCount) => {
-          return (
-            <HoverCounter count={counter} incrementCount={incrementCount} />
-          );
-        }}
+        {(counter, incrementCount) => (
+          <ThemeContext.Consumer>
+            {({ theme }) => (
+              <HoverCounter
+                count={counter}
+                incrementCount={incrementCount}
+                theme={theme}
+              />
+            )}
+          </ThemeContext.Consumer>
+        )}
       </Counter>
     </div>
   );
-};
-
-export default Content;
+}

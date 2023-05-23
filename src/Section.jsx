@@ -2,6 +2,7 @@
 import React from "react";
 import Content from "./Content";
 
+// eslint-disable-next-line react/prop-types
 const Section = () => {
   return (
     <div>
